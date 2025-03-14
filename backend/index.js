@@ -13,19 +13,16 @@ app.use(express.json());
 //middleware for cors 
 app.use(
   cors({
-    origin:"http://localhost:3000",
+    origin:"http://localhost:5173",
     methods:['GET','POST','PUT','DELETE'],
     allowedHeaders:['Content-Type']
   })
 );
 
-
-
 //INITIALISE / ROUTE
 app.get('/',(req,res)=>{
   console.log(req);
   return res.status(200).send("Pehla sending msg");
-  
 });
 
 app.use('/books',booksRoute)
